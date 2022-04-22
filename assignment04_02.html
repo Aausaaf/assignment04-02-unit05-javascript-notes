@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+        #scope,#hoisting,#constructor,#prototype{
+            width: 75vw;
+            height: 10vh;
+            border: 0.3vw solid white;
+            border-radius: 4vw;
+            font-size: 2vw;
+            background-color: transparent;
+            color: white;
+            margin-top: 18vh;
+            margin-left: 12.5vw;
+        }
+        #scope:hover,#hoisting:hover,#constructor:hover,#prototype:hover{
+           
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+  <a  href="informationscope.html">  <div id="scop"><button onclick="first()"  id="scope">Scope</button></div></a>
+  <a  href="informationscope.html"> <button  onclick="second()" style="margin-top: 7vh;" id="hoisting">Hoisting</button></a>
+    <a  href="informationscope.html">  <button  onclick="third()" style="margin-top: 7vh;" id="constructor">Constructor Function</button></a>
+        <a  href="informationscope.html">   <button  onclick="fourth()" style="margin-top: 7vh;" id="prototype">Prototype</button></a>
+
+    <script>
+     
+     if(JSON.parse(localStorage.getItem("scope")) === null)
+     {
+         localStorage.setItem("scope",JSON.stringify([]))
+     }
+     if(JSON.parse(localStorage.getItem("hoisting")) === null)
+     {
+         localStorage.setItem("hoisting",JSON.stringify([]))
+     }
+     if(JSON.parse(localStorage.getItem("constructor_function")) === null)
+     {
+         localStorage.setItem("constructor_function",JSON.stringify([]))
+     }
+     if(JSON.parse(localStorage.getItem("prototype")) === null)
+     {
+         localStorage.setItem("prototype",JSON.stringify([]))
+     }
+     if(JSON.parse(localStorage.getItem("switching")) === null)
+     {
+         localStorage.setItem("switching",JSON.stringify([]))
+     }
+
+     var s = {
+         first: "Scope determines the accessibility (visibility) of variables.",
+         second: "Before ES6 (2015), JavaScript had only Global Scope and Function Scope.",
+         third: "ES6 introduced two important new JavaScript keywords: let and const.",
+         four:"Variables declared inside a { } block cannot be accessed from outside the block",
+         five: "Variables declared inside a { } block can be accessed from outside the block.",
+         six:"Variables declared with the var keyword can NOT have block scope."
+     }
+     localStorage.setItem("scope",JSON.stringify(s))
+     
+     var h = {
+         first:"Hoisting is JavaScript's default behavior of moving declarations to the top.",
+         second:"In JavaScript, a variable can be declared after it has been used.",
+         third:"In other words; a variable can be used before it has been declared.",
+         four: "Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope",
+         five:"Variables defined with let and const are hoisted to the top of the block, but not initialized.",
+         six:"Meaning: The block of code is aware of the variable, but it cannot be used until it has been declared"
+     }
+     localStorage.setItem("hoisting",JSON.stringify(h))
+     var c =  {
+         first:"It is considered good practice to name constructor functions with an upper-case first letter.",
+         second:"In a constructor function this does not have a value. It is a substitute for the new object."
+         , third:"The way to create an object type, is to use an object constructor function.",
+         four:"Objects of the same type are created by calling the constructor function with the new keyword",
+         five:"Which object depends on how this is being invoked (used or called)",
+         six:"this is not a variable. It is a keyword. You cannot change the value of this",
+     }
+     localStorage.setItem("constructor_function",JSON.stringify(c))
+
+     var p = {
+         first:"All JavaScript objects inherit properties and methods from a prototype.",
+         second:"To add a new property to a constructor, you must add it to the constructor function."
+         , third:"The JavaScript prototype property allows you to add new properties to object constructors.",
+         four:"The JavaScript prototype property also allows you to add new methods to objects constructors",
+         six:"All JavaScript objects inherit properties and methods from a prototype:",
+     }
+     localStorage.setItem("prototype",JSON.stringify(p))
+
+
+
+     function first()
+     {
+         console.log("ksgnvjs")
+        localStorage.setItem("switching",JSON.stringify(1))
+     }
+     function second()
+     {
+        localStorage.setItem("switching",JSON.stringify(2))
+     }
+     function third()
+     {
+        localStorage.setItem("switching",JSON.stringify(3))
+     }
+     function fourth()
+     {
+        localStorage.setItem("switching",JSON.stringify(4))
+     }
+    </script>
+</body>
+
+</html>
